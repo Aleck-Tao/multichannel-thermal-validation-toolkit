@@ -1,0 +1,159 @@
+{
+  "channels": [
+    {
+      "channel": "Channel-01",
+      "hold_drift_c_per_min": -0.020574,
+      "hold_mean_error_c": -0.12479721,
+      "hold_noise_rms_c": 0.02173634,
+      "hold_peak_abs_error_c": 0.16994,
+      "samples": 301,
+      "valid_fraction": 1.0
+    },
+    {
+      "channel": "Channel-02",
+      "hold_drift_c_per_min": 0.01837342,
+      "hold_mean_error_c": -0.09365131,
+      "hold_noise_rms_c": 0.0264573,
+      "hold_peak_abs_error_c": 0.16362,
+      "samples": 301,
+      "valid_fraction": 1.0
+    },
+    {
+      "channel": "Channel-03",
+      "hold_drift_c_per_min": 0.00883694,
+      "hold_mean_error_c": -0.07460131,
+      "hold_noise_rms_c": 0.02397814,
+      "hold_peak_abs_error_c": 0.13524,
+      "samples": 301,
+      "valid_fraction": 1.0
+    },
+    {
+      "channel": "Channel-04",
+      "hold_drift_c_per_min": -0.00494237,
+      "hold_mean_error_c": 1.01119852,
+      "hold_noise_rms_c": 0.02582694,
+      "hold_peak_abs_error_c": 1.06364,
+      "samples": 301,
+      "valid_fraction": 0.9634551495016611
+    },
+    {
+      "channel": "Channel-05",
+      "hold_drift_c_per_min": 0.01875785,
+      "hold_mean_error_c": -0.01885574,
+      "hold_noise_rms_c": 0.02100774,
+      "hold_peak_abs_error_c": 0.05554,
+      "samples": 301,
+      "valid_fraction": 1.0
+    },
+    {
+      "channel": "Channel-06",
+      "hold_drift_c_per_min": -0.00624577,
+      "hold_mean_error_c": 0.01025639,
+      "hold_noise_rms_c": 0.02258248,
+      "hold_peak_abs_error_c": 0.06604,
+      "samples": 301,
+      "valid_fraction": 1.0
+    },
+    {
+      "channel": "Channel-07",
+      "hold_drift_c_per_min": 0.01450157,
+      "hold_mean_error_c": 0.03847164,
+      "hold_noise_rms_c": 0.02522001,
+      "hold_peak_abs_error_c": 0.09279,
+      "samples": 301,
+      "valid_fraction": 1.0
+    },
+    {
+      "channel": "Channel-08",
+      "hold_drift_c_per_min": 0.41872585,
+      "hold_mean_error_c": 0.54648672,
+      "hold_noise_rms_c": 0.02587268,
+      "hold_peak_abs_error_c": 0.75922,
+      "samples": 301,
+      "valid_fraction": 1.0
+    },
+    {
+      "channel": "Channel-09",
+      "hold_drift_c_per_min": 0.00038935,
+      "hold_mean_error_c": 0.08804909,
+      "hold_noise_rms_c": 0.02673764,
+      "hold_peak_abs_error_c": 0.13955,
+      "samples": 301,
+      "valid_fraction": 0.9634551495016611
+    },
+    {
+      "channel": "Channel-10",
+      "hold_drift_c_per_min": 0.02779615,
+      "hold_mean_error_c": 0.1142423,
+      "hold_noise_rms_c": 0.02483506,
+      "hold_peak_abs_error_c": 0.17559,
+      "samples": 301,
+      "valid_fraction": 1.0
+    }
+  ],
+  "dataset": "degraded.csv",
+  "hold_start_s": 240.0,
+  "issues": [
+    {
+      "channel": "Channel-04",
+      "code": "VALID_FRACTION_LOW",
+      "limit": 0.98,
+      "message": "valid sample fraction is below policy",
+      "observed": 0.9634551495016611
+    },
+    {
+      "channel": "Channel-04",
+      "code": "MEAN_ERROR_HIGH",
+      "limit": 0.4,
+      "message": "absolute hold mean error exceeds policy",
+      "observed": 1.01119852
+    },
+    {
+      "channel": "Channel-04",
+      "code": "PEAK_ERROR_HIGH",
+      "limit": 0.75,
+      "message": "hold peak absolute error exceeds policy",
+      "observed": 1.06364
+    },
+    {
+      "channel": "Channel-08",
+      "code": "MEAN_ERROR_HIGH",
+      "limit": 0.4,
+      "message": "absolute hold mean error exceeds policy",
+      "observed": 0.54648672
+    },
+    {
+      "channel": "Channel-08",
+      "code": "PEAK_ERROR_HIGH",
+      "limit": 0.75,
+      "message": "hold peak absolute error exceeds policy",
+      "observed": 0.75922
+    },
+    {
+      "channel": "Channel-08",
+      "code": "DRIFT_HIGH",
+      "limit": 0.08,
+      "message": "absolute hold drift exceeds policy",
+      "observed": 0.41872585
+    },
+    {
+      "channel": "Channel-09",
+      "code": "VALID_FRACTION_LOW",
+      "limit": 0.98,
+      "message": "valid sample fraction is below policy",
+      "observed": 0.9634551495016611
+    },
+    {
+      "channel": null,
+      "code": "CHANNEL_SPREAD_HIGH",
+      "limit": 0.65,
+      "message": "95th percentile pairwise channel spread exceeds policy",
+      "observed": 1.18425
+    }
+  ],
+  "max_pairwise_spread_c": 1.218,
+  "p95_pairwise_spread_c": 1.18425,
+  "passed": false,
+  "policy_version": "public-demo-v1",
+  "synthetic": true
+}

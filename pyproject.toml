@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multichannel-thermal-validation-toolkit"
+version = "1.0.0"
+description = "Reproducible protocol, simulation, and validation toolkit for multichannel thermal experiments"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Yuanyuan Tao" }]
+dependencies = ["numpy==2.3.5"]
+
+[project.scripts]
+thermal-validate = "thermal_validation.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["thermal_validation*"]

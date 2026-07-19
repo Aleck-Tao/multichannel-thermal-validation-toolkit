@@ -1,0 +1,9 @@
+{
+  "version": "public-demo-v1",
+  "hold_start_s": 240.0,
+  "min_valid_fraction": 0.98,
+  "max_hold_mean_error_c": 0.4,
+  "max_hold_peak_abs_error_c": 0.75,
+  "max_hold_drift_c_per_min": 0.08,
+  "max_p95_pairwise_spread_c": 0.65
+}
