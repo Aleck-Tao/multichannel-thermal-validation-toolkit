@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from .analysis import analyze_experiment
+from .common_mode import run_common_mode
 from .protocol_x import decode_sample
 from .reporting import write_comparison, write_json, write_svg
 from .simulator import SimulationConfig, simulate, write_csv
@@ -82,6 +83,12 @@ def _demo(args: argparse.Namespace) -> int:
     return 0 if baseline.passed and not degraded.passed else 1
 
 
+def _common_mode(args: argparse.Namespace) -> int:
+    summary = run_common_mode(args.root)
+    print(json.dumps({item["case"]: item["report"]["passed"] for item in summary["cases"]}, sort_keys=True))
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     subparsers = parser.add_subparsers(dest="command", required=True)
@@ -107,6 +114,9 @@ def build_parser() -> argparse.ArgumentParser:
     demo_parser = subparsers.add_parser("demo", help="regenerate all public datasets and reports")
     demo_parser.add_argument("--root", type=Path, default=PROJECT_ROOT)
     demo_parser.set_defaults(handler=_demo)
+    common_parser = subparsers.add_parser("common-mode", help="compare paired channel/reference offsets of the baseline")
+    common_parser.add_argument("--root", type=Path, default=PROJECT_ROOT)
+    common_parser.set_defaults(handler=_common_mode)
     return parser
 
 

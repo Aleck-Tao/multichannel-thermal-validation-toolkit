@@ -3,6 +3,9 @@ name: ci
 on:
   push:
   pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '53 1 * * 1'
 
 permissions:
   contents: read
@@ -22,5 +25,7 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Regenerate synthetic evidence
         run: python -m thermal_validation demo --root .
+      - name: Regenerate paired common-mode comparison
+        run: python -m thermal_validation common-mode --root .
       - name: Verify committed evidence is reproducible
         run: git diff --exit-code -- data/synthetic results

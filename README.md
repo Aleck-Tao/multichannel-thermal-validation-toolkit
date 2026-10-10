@@ -29,6 +29,8 @@ Cross-channel spread checks agreement at shared timestamps, while reference erro
 
 See the [comparison](results/comparison.md), [baseline report](results/baseline_report.json) and [validation policy](config/validation_policy.json) for the full decisions. The degraded case triggers eight checks as expected.
 
+The [paired common-mode comparison](results/common_mode/comparison.md) shifts every channel, the reference, or both by +1 °C using identical baseline rows. Channel-only and reference-only shifts fail the error gates while spread stays fixed. Shifting both passes: their shared bias is unobservable to these relative checks. The comparison includes derived inputs, hashes and all channel metrics.
+
 ## Run the example
 
 From a checkout, with Python 3.11 or newer:
@@ -36,6 +38,7 @@ From a checkout, with Python 3.11 or newer:
 ```bash
 python -m pip install -e .
 python -m thermal_validation demo --root .
+python -m thermal_validation common-mode --root .
 ```
 
 This regenerates both datasets, reports and plots. The expected decisions are baseline `passed: true` with zero issues and degraded `passed: false` with eight issues. CI repeats the demo and compares the generated files with the committed output. Run the tests with:
